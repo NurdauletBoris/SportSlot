@@ -1,0 +1,103 @@
+[
+{
+  "model": "venues.sporttype",
+  "pk": 1,
+  "fields": {
+    "name": "Футбол"
+  }
+},
+{
+  "model": "venues.sporttype",
+  "pk": 2,
+  "fields": {
+    "name": "Волейбол"
+  }
+},
+{
+  "model": "venues.sporttype",
+  "pk": 3,
+  "fields": {
+    "name": "Баскетбол"
+  }
+},
+{
+  "model": "venues.sporttype",
+  "pk": 4,
+  "fields": {
+    "name": "Теннис"
+  }
+},
+{
+  "model": "venues.sporttype",
+  "pk": 5,
+  "fields": {
+    "name": "Сквош"
+  }
+},
+{
+  "model": "venues.venue",
+  "pk": 1,
+  "fields": {
+    "name": "Beksultan Football",
+    "sport_type": 1,
+    "address": "г. Алматы, ул. Кенбаева, 10",
+    "description": "Футбольное поле с искусственным газоном, освещение, раздевалки",
+    "price_per_hour": "15000.00"
+  }
+},
+{
+  "model": "venues.venue",
+  "pk": 2,
+  "fields": {
+    "name": "Kaysar Arena",
+    "sport_type": 1,
+    "address": "г. Алматы, ул. Айманова, 193а",
+    "description": "Крытый футбольный манеж, подходит для игры круглый год",
+    "price_per_hour": "18000.00"
+  }
+},
+{
+  "model": "venues.venue",
+  "pk": 3,
+  "fields": {
+    "name": "Family Tennis Club",
+    "sport_type": 4,
+    "address": "г. Алматы, ул. Касыма Кайсенова, 177/1",
+    "description": "Теннисные корты с профессиональным покрытием, прокат инвентаря",
+    "price_per_hour": "8000.00"
+  }
+},
+{
+  "model": "venues.venue",
+  "pk": 4,
+  "fields": {
+    "name": "Abb Arena",
+    "sport_type": 1,
+    "address": "г. Алматы, 3-й переулок, 53",
+    "description": "Многофункциональная арена: футбол, баскетбол, волейбол",
+    "price_per_hour": "16000.00"
+  }
+},
+{
+  "model": "venues.venue",
+  "pk": 5,
+  "fields": {
+    "name": "Dostyk Basketball Hall",
+    "sport_type": 3,
+    "address": "г. Алматы, пр. Достык, 128",
+    "description": "Крытый баскетбольный зал со스 стандартной разметкой и трибунами",
+    "price_per_hour": "10000.00"
+  }
+},
+{
+  "model": "venues.venue",
+  "pk": 6,
+  "fields": {
+    "name": "Almaty Squash Center",
+    "sport_type": 5,
+    "address": "г. Алматы, ул. Сатпаева, 30",
+    "description": "Два корта для сквоша, кондиционер, душевые",
+    "price_per_hour": "6000.00"
+  }
+}
+]
