@@ -1,4 +1,4 @@
-# SportSlot 🏟️
+# SportSlot 
 
 Sports venue booking platform for Almaty. Users can browse sports venues,
 check details and reviews, book time slots, and manage their bookings.
