@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 class Booking(models.Model):
     STATUS_CHOICES = [
@@ -16,6 +17,26 @@ class Booking(models.Model):
 
     def __str__(self):
         return f'{self.venue} {self.date} {self.start_time}-{self.end_time}'
+    
+    def clean(self):
+        
+        if self.start_time and self.end_time and self.start_time >= self.end_time:
+            raise ValidationError('Время окончания должно быть позже времени начала.')
+
+        
+        overlapping = Booking.objects.filter(
+            venue=self.venue,
+            date=self.date,
+            start_time__lt=self.end_time,
+            end_time__gt=self.start_time,
+        ).exclude(pk=self.pk).exclude(status='cancelled')
+
+        if overlapping.exists():
+            raise ValidationError('Этот слот уже занят. Выберите другое время.')
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        super().save(*args, **kwargs)
 
 class Favorite(models.Model):
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='favorites')
