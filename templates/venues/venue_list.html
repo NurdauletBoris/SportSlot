@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Площадки — SportSlot{% endblock %}
+
+{% block content %}
+<h1>Спортивные площадки</h1>
+
+<div class="filters">
+    <a href="/" class="{% if not selected_sport %}active{% endif %}">Все</a>
+    {% for st in sport_types %}
+        <a href="?sport={{ st.id }}"
+           class="{% if selected_sport == st.id|stringformat:'s' %}active{% endif %}">
+            {{ st.name }}
+        </a>
+    {% endfor %}
+</div>
+
+{% if venues %}
+    <div class="venue-grid">
+        {% for venue in venues %}
+            <div class="venue-card">
+                <h3>{{ venue.name }}</h3>
+                <p class="sport-badge">{{ venue.sport_type.name }}</p>
+                <p>{{ venue.address }}</p>
+                <p class="price">{{ venue.price_per_hour }} ₸/час</p>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>Площадок не найдено.</p>
+{% endif %}
+{% endblock %}
