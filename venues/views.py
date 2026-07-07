@@ -50,7 +50,7 @@ def venue_detail(request, pk):
                     messages.success(request, 'Бронь успешно создана.')
                     return redirect('venue_detail', pk=venue.pk)
                 except ValidationError as e:
-                    messages.error(request, e.message)
+                    messages.error(request, '; '.join(e.messages))
 
         elif 'review_submit' in request.POST:
             review_form = ReviewForm(request.POST)

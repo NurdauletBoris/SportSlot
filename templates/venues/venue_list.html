@@ -19,6 +19,7 @@
     <div class="venue-grid">
         {% for venue in venues %}
             <div class="venue-card">
+                {% if venue.image_url %}<img src="{{ venue.image_url }}" alt="{{ venue.name }}" class="venue-img">{% endif %}
                 <h3>{{ venue.name }}</h3>
                 <p class="sport-badge">{{ venue.sport_type.name }}</p>
                 <p>{{ venue.address }}</p>

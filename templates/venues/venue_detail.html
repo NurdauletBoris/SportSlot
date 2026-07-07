@@ -6,7 +6,7 @@
 {% block content %}
 <div class="venue-detail">
     <h1>{{ venue.name }}</h1>
-
+    {% if venue.image_url %}<img src="{{ venue.image_url }}" alt="{{ venue.name }}" class="venue-img-large">{% endif %}
     <p class="sport-badge">{{ venue.sport_type.name }}</p>
     <p><strong>Адрес:</strong> {{ venue.address }}</p>
     <p><strong>Цена:</strong> {{ venue.price_per_hour }} ₸/час</p>

@@ -42,7 +42,8 @@
     "sport_type": 1,
     "address": "г. Алматы, ул. Кенбаева, 10",
     "description": "Футбольное поле с искусственным газоном, освещение, раздевалки",
-    "price_per_hour": "15000.00"
+    "price_per_hour": "15000.00",
+    "image_url": "https://images.unsplash.com/photo-1716745559715-282bb61e3012?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGZvb3RiYWxsJTIwZmllbGRzJTIwYnVpbGR8ZW58MHx8MHx8fDA%3D"
   }
 },
 {
@@ -53,7 +54,8 @@
     "sport_type": 1,
     "address": "г. Алматы, ул. Айманова, 193а",
     "description": "Крытый футбольный манеж, подходит для игры круглый год",
-    "price_per_hour": "18000.00"
+    "price_per_hour": "18000.00",
+    "image_url": "https://images.unsplash.com/photo-1630420598913-44208d36f9af?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kb29yJTIwc29jY2VyfGVufDB8fDB8fHww"
   }
 },
 {
@@ -64,7 +66,8 @@
     "sport_type": 4,
     "address": "г. Алматы, ул. Касыма Кайсенова, 177/1",
     "description": "Теннисные корты с профессиональным покрытием, прокат инвентаря",
-    "price_per_hour": "8000.00"
+    "price_per_hour": "8000.00",
+    "image_url": "https://plus.unsplash.com/premium_photo-1666913667082-c1fecc45275d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dGVubmlzJTIwY2x1YnxlbnwwfHwwfHx8MA%3D%3D"
   }
 },
 {
@@ -75,7 +78,8 @@
     "sport_type": 1,
     "address": "г. Алматы, 3-й переулок, 53",
     "description": "Многофункциональная арена: футбол, баскетбол, волейбол",
-    "price_per_hour": "16000.00"
+    "price_per_hour": "16000.00",
+    "image_url": "https://images.unsplash.com/photo-1573294184805-e3044b161ace?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzF8fGJhc2tldGJhbGwlMjBhcmVuYXxlbnwwfHwwfHx8MA%3D%3D"
   }
 },
 {
@@ -86,7 +90,8 @@
     "sport_type": 3,
     "address": "г. Алматы, пр. Достык, 128",
     "description": "Крытый баскетбольный зал со스 стандартной разметкой и трибунами",
-    "price_per_hour": "10000.00"
+    "price_per_hour": "10000.00",
+    "image_url": "https://images.unsplash.com/photo-1559369064-c4d65141e408?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmFza2V0YmFsbCUyMGNvdXJ0JTIwaW5kb29yfGVufDB8fDB8fHww"
   }
 },
 {
@@ -97,7 +102,8 @@
     "sport_type": 5,
     "address": "г. Алматы, ул. Сатпаева, 30",
     "description": "Два корта для сквоша, кондиционер, душевые",
-    "price_per_hour": "6000.00"
+    "price_per_hour": "6000.00",
+    "image_url": "https://images.unsplash.com/photo-1740813416102-5d42f408bc85?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3F1YXNoJTIwc3BvcnR8ZW58MHx8MHx8fDA%3D"
   }
 }
 ]

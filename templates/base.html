@@ -10,7 +10,7 @@
     <nav>
         <a href="/">Площадки</a>
         <a href="{% url 'my_bookings' %}">Мои брони</a>
-        <a href="{% url 'favorites' %}">Избранное</a>
+        <a href="{% url 'favorites' %}">Избранное ({{ favorites_count }})</a>
 
         {% if user.is_authenticated %}
             <span>Привет, {{ user.username }}</span>
