@@ -23,6 +23,10 @@
                 <p class="sport-badge">{{ venue.sport_type.name }}</p>
                 <p>{{ venue.address }}</p>
                 <p class="price">{{ venue.price_per_hour }} ₸/час</p>
+
+                <a href="{% url 'venue_detail' venue.id %}" class="btn">
+                    Подробнее
+                </a>
             </div>
         {% endfor %}
     </div>

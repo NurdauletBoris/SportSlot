@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load venue_extras %}
+
+{% block title %}{{ venue.name }} — SportSlot{% endblock %}
+
+{% block content %}
+<div class="venue-detail">
+    <h1>{{ venue.name }}</h1>
+
+    <p class="sport-badge">{{ venue.sport_type.name }}</p>
+    <p><strong>Адрес:</strong> {{ venue.address }}</p>
+    <p><strong>Цена:</strong> {{ venue.price_per_hour }} ₸/час</p>
+
+    <form method="post" action="{% url 'toggle_favorite' venue.id %}">
+    {% csrf_token %}
+    {% if is_favorite %}
+        <button type="submit" class="btn">Удалить из избранного</button>
+    {% else %}
+        <button type="submit" class="btn">В избранное</button>
+    {% endif %}
+</form>
+
+    <h3>Описание</h3>
+    <p>{{ venue.description }}</p>
+
+    <hr>
+
+    <h3>Забронировать</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ booking_form.as_p }}
+        <button type="submit" name="booking_submit" class="btn">Забронировать</button>
+    </form>
+
+    <hr>
+
+    <h3>Отзывы</h3>
+    {% if reviews %}
+        {% for review in reviews %}
+            <div class="review-card">
+                <strong>{{ review.user.username }}</strong>
+                <p>{{ review.rating|stars }}</p>
+                <p>{{ review.text }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Пока нет отзывов.</p>
+    {% endif %}
+
+    <h3>Оставить отзыв</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ review_form.as_p }}
+        <button type="submit" name="review_submit" class="btn">Отправить</button>
+    </form>
+</div>
+{% endblock %}

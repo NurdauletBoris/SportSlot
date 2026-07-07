@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Мои брони — SportSlot{% endblock %}
+
+{% block content %}
+<h1>Мои брони</h1>
+
+{% if bookings %}
+    <div class="venue-grid">
+        {% for booking in bookings %}
+            <div class="venue-card">
+                <h3>{{ booking.venue.name }}</h3>
+                <p><strong>Дата:</strong> {{ booking.date }}</p>
+                <p><strong>Время:</strong> {{ booking.start_time }} - {{ booking.end_time }}</p>
+                <p><strong>Статус:</strong> {{ booking.get_status_display }}</p>
+
+                {% if booking.status != 'cancelled' %}
+                    <form method="post" action="{% url 'cancel_booking' booking.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">Отменить</button>
+                    </form>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>У вас пока нет бронирований.</p>
+{% endif %}
+{% endblock %}

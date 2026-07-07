@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Избранное — SportSlot{% endblock %}
+
+{% block content %}
+<h1>Избранное</h1>
+
+{% if favorites %}
+    <div class="venue-grid">
+        {% for fav in favorites %}
+            <div class="venue-card">
+                <h3>{{ fav.venue.name }}</h3>
+                <p class="sport-badge">{{ fav.venue.sport_type.name }}</p>
+                <p>{{ fav.venue.address }}</p>
+                <p class="price">{{ fav.venue.price_per_hour }} ₸/час</p>
+
+                <a href="{% url 'venue_detail' fav.venue.id %}" class="btn">Подробнее</a>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>У вас пока нет избранных площадок.</p>
+{% endif %}
+{% endblock %}
