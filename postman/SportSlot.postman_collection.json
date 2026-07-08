@@ -1,0 +1,1036 @@
+{
+  "info": {
+    "_postman_id": "d4115ab7-2f24-4240-bbdf-91b01240f786",
+    "name": "SportSlot",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56470945",
+    "_collection_link": "https://go.postman.co/collection/56470945-d4115ab7-2f24-4240-bbdf-91b01240f786?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "name": "Login",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "rninj",
+                  "type": "text",
+                  "uuid": "2b530fbb-90ab-4273-9400-5e06963c227d"
+                },
+                {
+                  "key": "password",
+                  "value": "123456",
+                  "type": "text",
+                  "uuid": "cd803745-4f82-43f6-9b8a-0f83c679be11"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/auth/login/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "login",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 08 Jul 2026 07:43:49 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Allow",
+              "value": "POST, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "52"
+            },
+            {
+              "key": "Vary",
+              "value": "Cookie, origin"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"token\": \"ddba00bec8a6f1189fdcb2b9fe1e9db4a56081d6\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create venue",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token ddba00bec8a6f1189fdcb2b9fe1e9db4a56081d6",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Test Arena\", \"sport_type\": 1, \"address\": \"Almaty, Test st. 1\", \"description\": \"Test\", \"price_per_hour\": \"5000.00\", \"image_url\": \"\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/venues/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "venues",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Create venue",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token ddba00bec8a6f1189fdcb2b9fe1e9db4a56081d6",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Test Arena\", \"sport_type\": 1, \"address\": \"Almaty, Test st. 1\", \"description\": \"Test\", \"price_per_hour\": \"5000.00\", \"image_url\": \"\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/venues/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "venues",
+                ""
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 08 Jul 2026 07:44:20 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "OPTIONS, GET, POST"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "137"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 8,\n    \"name\": \"Test Arena\",\n    \"address\": \"Almaty, Test st. 1\",\n    \"description\": \"Test\",\n    \"price_per_hour\": \"5000.00\",\n    \"image_url\": \"\",\n    \"sport_type\": 1\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get venue reviews",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/venues/1/reviews/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "venues",
+            "1",
+            "reviews",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get venue reviews",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/venues/1/reviews/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "venues",
+                "1",
+                "reviews",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 08 Jul 2026 07:44:36 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "OPTIONS, GET"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "[]"
+        }
+      ]
+    },
+    {
+      "name": "Get my bookings",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token ddba00bec8a6f1189fdcb2b9fe1e9db4a56081d6",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/bookings/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "bookings",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get my bookings",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token ddba00bec8a6f1189fdcb2b9fe1e9db4a56081d6",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/bookings/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "bookings",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 08 Jul 2026 07:44:48 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "313"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"date\": \"2026-07-10\",\n        \"start_time\": \"10:00:00\",\n        \"end_time\": \"12:00:00\",\n        \"status\": \"pending\",\n        \"created_at\": \"2026-07-06T20:14:00.304141Z\",\n        \"user\": 1,\n        \"venue\": 1\n    },\n    {\n        \"id\": 2,\n        \"date\": \"2026-07-10\",\n        \"start_time\": \"12:00:00\",\n        \"end_time\": \"14:00:00\",\n        \"status\": \"pending\",\n        \"created_at\": \"2026-07-06T20:15:03.041607Z\",\n        \"user\": 1,\n        \"venue\": 1\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Create booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token ddba00bec8a6f1189fdcb2b9fe1e9db4a56081d6",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"venue\": 1, \"date\": \"2026-09-10\", \"start_time\": \"14:00\", \"end_time\": \"15:00\", \"status\": \"pending\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/bookings/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "bookings",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Create booking",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token ddba00bec8a6f1189fdcb2b9fe1e9db4a56081d6",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"venue\": 1, \"date\": \"2026-09-10\", \"start_time\": \"14:00\", \"end_time\": \"15:00\", \"status\": \"pending\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/bookings/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "bookings",
+                ""
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 08 Jul 2026 07:45:02 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "155"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 4,\n    \"date\": \"2026-09-10\",\n    \"start_time\": \"14:00:00\",\n    \"end_time\": \"15:00:00\",\n    \"status\": \"pending\",\n    \"created_at\": \"2026-07-08T07:45:02.085948Z\",\n    \"user\": 1,\n    \"venue\": 1\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create booking(occupied slot)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token ddba00bec8a6f1189fdcb2b9fe1e9db4a56081d6",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"venue\": 1, \"date\": \"2026-09-10\", \"start_time\": \"14:00\", \"end_time\": \"15:00\", \"status\": \"pending\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/bookings/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "bookings",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Create booking(occupied slot)",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token ddba00bec8a6f1189fdcb2b9fe1e9db4a56081d6",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"venue\": 1, \"date\": \"2026-09-10\", \"start_time\": \"14:00\", \"end_time\": \"15:00\", \"status\": \"pending\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/bookings/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "bookings",
+                ""
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 08 Jul 2026 07:45:32 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "92"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": [\n        \"Этот слот уже занят. Выберите другое время.\"\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update booking",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token ddba00bec8a6f1189fdcb2b9fe1e9db4a56081d6",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"venue\": 1, \"date\": \"2026-09-10\", \"start_time\": \"16:00\", \"end_time\": \"17:00\", \"status\": \"pending\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/bookings/4/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "bookings",
+            "4",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Update booking",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token ddba00bec8a6f1189fdcb2b9fe1e9db4a56081d6",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"venue\": 1, \"date\": \"2026-09-10\", \"start_time\": \"16:00\", \"end_time\": \"17:00\", \"status\": \"pending\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/bookings/4/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "bookings",
+                "4",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 08 Jul 2026 07:46:12 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, DELETE, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "155"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 4,\n    \"date\": \"2026-09-10\",\n    \"start_time\": \"16:00:00\",\n    \"end_time\": \"17:00:00\",\n    \"status\": \"pending\",\n    \"created_at\": \"2026-07-08T07:45:02.085948Z\",\n    \"user\": 1,\n    \"venue\": 1\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete booking",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token ddba00bec8a6f1189fdcb2b9fe1e9db4a56081d6",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/bookings/4/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "bookings",
+            "4",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Delete booking",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token ddba00bec8a6f1189fdcb2b9fe1e9db4a56081d6",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/bookings/4/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "bookings",
+                "4",
+                ""
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 08 Jul 2026 07:46:36 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, DELETE, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "0"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "name": "Logout",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token ddba00bec8a6f1189fdcb2b9fe1e9db4a56081d6",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/auth/logout/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "logout",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Logout",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token ddba00bec8a6f1189fdcb2b9fe1e9db4a56081d6",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/auth/logout/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "logout",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 08 Jul 2026 07:47:08 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, origin"
+            },
+            {
+              "key": "Allow",
+              "value": "OPTIONS, POST"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "38"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Successfully logged out.\"\n}"
+        }
+      ]
+    }
+  ]
+}
