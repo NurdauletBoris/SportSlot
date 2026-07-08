@@ -2,9 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # ---------------------------------------------------------
-    # ФРОНТЕНД МАРШРУТТАРЫ (Бұрыннан бар код, тиіспейміз)
-    # ---------------------------------------------------------
+    
     path('', views.venue_list, name='venue_list'),
     path('venues/<int:pk>/', views.venue_detail, name='venue_detail'),
     path('my-bookings/', views.my_bookings, name='my_bookings'),
@@ -12,9 +10,7 @@ urlpatterns = [
     path('venues/<int:pk>/favorite/', views.toggle_favorite, name='toggle_favorite'),
     path('favorites/', views.favorites, name='favorites'),
 
-    # ---------------------------------------------------------
-    # БАКЕНД API МАРШРУТТАРЫ (Жаңадан қосылған код)
-    # ---------------------------------------------------------
+    
     path('api/venues/', views.api_venue_list, name='api-venue-list'),
     path('api/venues/<int:pk>/reviews/', views.api_venue_reviews, name='api-venue-reviews'),
 ]

@@ -3,19 +3,17 @@ from django.contrib import messages
 from django.core.exceptions import ValidationError
 from django.contrib.auth.decorators import login_required
 
-# DRF үшін керек импорттарды осында қостық
-from rest_framework.decorators import api_view
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework import status
 
 from .models import Venue, SportType, Review
 from bookings.models import Booking, Favorite
 from .forms import BookingForm, ReviewForm
-from .serializers import VenueSerializer, ReviewSerializer  # Сериализаторларды да қостық
+from .serializers import VenueSerializer, ReviewSerializer  
 
-# ---------------------------------------------------------
-# БҰЛ ФРОНТЕНДКЕ АРНАЛҒАН КӨРІНІСТЕР (Ескі код, тиіспейміз)
-# ---------------------------------------------------------
+
 
 def venue_list(request):
     venues = Venue.objects.all()
@@ -123,11 +121,10 @@ def favorites(request):
         'favorites': favorites
     })
 
-# ---------------------------------------------------------
-# БҰЛ СЕНІҢ БАКЕНД ТАПСЫРМАҢ (DRF API КӨРІНІСТЕРІ)
-# ---------------------------------------------------------
+
 
 @api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticatedOrReadOnly])
 def api_venue_list(request):
     if request.method == 'GET':
         venues = Venue.objects.all()

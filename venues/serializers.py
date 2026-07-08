@@ -24,7 +24,7 @@ class ReviewSerializer(serializers.Serializer):
     text = serializers.CharField(allow_blank=True, required=False)
     created_at = serializers.DateTimeField(read_only=True)
     
-    # User-ді тек оқуға арнаймыз, ал Venue-ні құру кезінде ID арқылы береміз
+    
     user_id = serializers.IntegerField(source='user.id', read_only=True)
     venue_id = serializers.PrimaryKeyRelatedField(
         queryset=Venue.objects.all(), source='venue', write_only=True

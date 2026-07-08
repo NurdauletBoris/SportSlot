@@ -26,11 +26,11 @@ class BookingListCreateAPIView(APIView):
         serializer = BookingSerializer(data=request.data)
         if serializer.is_valid():
             try:
-                # Осы жерде юзерді тіркейміз
+                
                 serializer.save(user=request.user)
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
             except DjangoValidationError as e:
-                # Егер clean() қате тапса, оны фронтқа жібереміз
+                
                 return Response({'error': e.messages}, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
