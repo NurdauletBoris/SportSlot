@@ -3,10 +3,19 @@ from django.contrib import messages
 from django.core.exceptions import ValidationError
 from django.contrib.auth.decorators import login_required
 
-from .models import Venue, SportType
+# DRF үшін керек импорттарды осында қостық
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+
+from .models import Venue, SportType, Review
 from bookings.models import Booking, Favorite
 from .forms import BookingForm, ReviewForm
+from .serializers import VenueSerializer, ReviewSerializer  # Сериализаторларды да қостық
 
+# ---------------------------------------------------------
+# БҰЛ ФРОНТЕНДКЕ АРНАЛҒАН КӨРІНІСТЕР (Ескі код, тиіспейміз)
+# ---------------------------------------------------------
 
 def venue_list(request):
     venues = Venue.objects.all()
@@ -113,3 +122,33 @@ def favorites(request):
     return render(request, 'venues/favorites.html', {
         'favorites': favorites
     })
+
+# ---------------------------------------------------------
+# БҰЛ СЕНІҢ БАКЕНД ТАПСЫРМАҢ (DRF API КӨРІНІСТЕРІ)
+# ---------------------------------------------------------
+
+@api_view(['GET', 'POST'])
+def api_venue_list(request):
+    if request.method == 'GET':
+        venues = Venue.objects.all()
+        serializer = VenueSerializer(venues, many=True)
+        return Response(serializer.data)
+    
+    elif request.method == 'POST':
+        serializer = VenueSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def api_venue_reviews(request, pk):
+    try:
+        venue = Venue.objects.get(pk=pk)
+    except Venue.DoesNotExist:
+        return Response({'error': 'Venue not found'}, status=status.HTTP_404_NOT_FOUND)
+        
+    reviews = Review.objects.filter(venue=venue)
+    serializer = ReviewSerializer(reviews, many=True)
+    return Response(serializer.data)
