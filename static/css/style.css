@@ -146,3 +146,32 @@ form textarea {
     object-fit: cover;
     border-radius: 8px;
 }
+
+form p {
+    margin-bottom: 14px;
+}
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+form input, form textarea, form select {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+form .helptext {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-top: 3px;
+}
+form ul {
+    font-size: 12px;
+    color: #888;
+    margin: 4px 0;
+    padding-left: 18px;
+}
